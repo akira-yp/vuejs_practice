@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+     <link rel="stylesheet" href="style.css">
+
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Student Registration</h1>
+      名前：<input v-model="name" placeholder="山田太郎">
+      コース：<input v-model="course" placeholder="WEBエンジニアコース">
+      受講期：<input v-model="acceptancePeriod" placeholder="2021年1月期">
+      <button v-on:click="addStudent">入力した生徒を追加する</button>
+      <div class="">
+        <ul>
+          <li v-for="student in students" v-bind:key="student.id">
+            ID {{ student.id }}/
+            名前 {{ student.name }}/
+            コース {{ student.course }}/
+            受講期 {{ student.acceptancePeriod }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
